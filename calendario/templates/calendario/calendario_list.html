@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{%block title%}Linha do tempo{% endblock %}
+
+{% block body %}
+
+{% include 'sidebar.html' %}
+
+<table class="table table-borderless">
+    <colgroup>
+        <col span="1" style="width: 50%;">
+        <col span="1" style="width: 50%;">
+     </colgroup>
+
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Data</td>
+            <td>
+                <a href="{% url 'calendario_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Adicionar novo
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for calendario in calendario_list %}
+            <tr>
+                <td>{{calendario.data|date:"M, Y"}}</td>
+                <td>
+                    <a href="{% url 'calendario_update' calendario.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="{% url 'calendario_delete' calendario.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

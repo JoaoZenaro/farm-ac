@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{%block title%}Lançamentos{% endblock %}
+
+{% block body %}
+
+{% include 'sidebar.html' %}
+
+<h1>Despesas</h1>
+<table class="table table-borderless">
+    <colgroup>
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 50%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 10%;">
+     </colgroup>
+
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Nome</td>
+            <td>Descrição</td>
+            <td>Valor</td>
+            <td>Data</td>
+            <td>
+                <a href="{% url 'lancamento_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Adicionar novo
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for lancamento in lancamento_list_despesas %}
+            <tr>
+                <td>{{lancamento.nome}}</td>
+                <td>{{lancamento.descricao}}</td>
+                <td>R$ {{lancamento.valor}}</td>
+                <td>{{lancamento.prestacao}}</td>
+                <td>
+                    <a href="{% url 'lancamento_update' lancamento.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="{% url 'lancamento_delete' lancamento.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h1>Ganhos</h1>
+<table class="table table-borderless">
+    <colgroup>
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 50%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 10%;">
+     </colgroup>
+
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Nome</td>
+            <td>Descrição</td>
+            <td>Valor</td>
+            <td>Data</td>
+            <td>
+                <a href="{% url 'lancamento_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Adicionar novo
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for lancamento in lancamento_list_ganhos %}
+            <tr>
+                <td>{{lancamento.nome}}</td>
+                <td>{{lancamento.descricao}}</td>
+                <td>R$ {{lancamento.valor}}</td>
+                <td>{{lancamento.prestacao}}</td>
+                <td>
+                    <a href="{% url 'lancamento_update' lancamento.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="{% url 'lancamento_delete' lancamento.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'home/index.html' %}
+
+{% block title %}Registrar-se{% endblock %}
+
+{% block body %}
+<section class="register">
+    <div class="registerform">
+
+        <h2>Cadastro</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Registrar-se">
+        </form>
+
+        <a href="{% url 'login' %}">Voltar para login</a>
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+$media-mobile: "only screen and (max-width : 600px)";
+
+$green: #48bf53;
+$gray: #D3D3D3;
+$lighterGray: #f3f3f3;
+
+.login, .register{
+    position: absolute;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.loginform{
+    .errorlist{
+        max-width: 300px;
+        margin-left: -2rem;
+        color: red;
+    }
+}
+
+.loginform, .registerform{
+    .errorlist{
+        list-style: none;
+        color: red;
+    }
+
+    // @media only screen and (max-width: 600px) {
+    //     background-color: red;
+    // }
+
+    h2{
+        margin-bottom: 50px;
+    }
+
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    padding: 7vh 5vh;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    p {
+        label{
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input{
+            border: 3px solid transparent;
+            background-color: $lighterGray;
+            border-radius: 5px;
+            padding: 10px 30px;
+            transition: 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        input:active, input:focus{
+            outline: $green;
+            border-bottom: 3px solid $green;
+        }
+    }
+
+    input[type=submit]{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-weight: bold;
+        border: none;
+        margin: 20px 0;
+        background-color: $green;
+        border-radius: 50px;
+        width: 250px;
+        height: 50px;
+        transition: 700ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    input[type=submit]:hover{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    }
+}
+
+.registerform{
+    label{
+        margin: 10px 0;
+        display: block;
+    }
+
+    input{
+        left: 0 !important;
+        transform: translateX(0) !important;
+        width: 300px;
+        border: 3px solid transparent;
+        background-color: $lighterGray;
+        border-radius: 5px;
+        padding: 10px 30px;
+        transition: 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    input:active, input:focus{
+        outline: $green;
+        border-bottom: 3px solid $green;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    span{
+        margin-top: 10px;
+        display: block;
+    }
+}
+
+.userNav{
+    .fa-solid{
+        padding-left: 0.5em;
+    }
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: linear-gradient(to bottom right, $green, #B4CF66);
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: $green;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 12px;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    text-indent: 1em;
+    color: inherit;
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #03A63C;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #03A63C;
+}
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+.errorlist{
+    padding-left: 0;
+    list-style: none;
+}
+
+.messages{
+    position: absolute
+}
+
+.alert {
+    width: 100%;
+    margin: auto;
+    margin-top: 2vh;
+}
+
+.homeScreen{
+    div{
+        div{
+            @media (max-width: 800px){
+                padding: 1vh;
+            }
+            
+
+            // padding: 5vh;
+
+            iframe{
+                border-radius: 15px;
+
+                @media (max-width: 800px) {
+                    height: 50vh !important;
+                }
+            }
+        }
+    }
+}
+
+.btnSpace{
+    @media (max-width:800px){
+        margin-bottom: 5vh;
+    }
+}

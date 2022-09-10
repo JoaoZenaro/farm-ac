@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+{% include 'sidebar.html' %}
+
+<h1>Dashboard</h1>
+
+{{v1}}{{v2}}
+
+<div class="container-fluid  homeScreen">
+    <div class="row">
+        <div class="col-md-6">
+            <iframe src="https://embed.windy.com/" frameborder="0" style="width: 100%; height: 95%;"></iframe>        
+        </div>
+        <div class="col-md-6">
+            <h2>Relatório de ganhos</h2>
+            <canvas id="splashChart"></canvas>
+            <a href="{% url 'lancamentos_text' %}" class="nav-link" style="text-decoration: underline;">Emitir relatório (texto)</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Previsão do tempo</h3>
+            <ul>
+                {% for i,j in weather.items %}
+                <li>{{i}}: {{j}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>Qualidade do solo</h3>
+            <ul>
+                {% for i,j in soil.items %}
+                <li>{{i}}: {{j}}</li>
+                {% endfor %}
+            </ul>         
+        </div>
+        <div class="col-md-4">
+            <h3>Alerta de risco de queimada</h3>
+            {{fire}}
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

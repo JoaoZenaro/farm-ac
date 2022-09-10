@@ -1,0 +1,25 @@
+{% extends 'home/index.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+<section class="login">
+    <div class="loginform">
+        <h2>Login</h2>
+  
+        <form method="post">
+          {% csrf_token %}
+          <table>
+            {{ form.as_p }}
+            <tr>
+              <td>&nbsp;</td>
+              <td><input type="submit" value="Entrar"></td>
+            </tr>                
+          </table>
+        </form>
+    
+        <a href="{% url 'signup' %}">Registrar-se</a>
+    </div>
+</section>
+{% endblock %}

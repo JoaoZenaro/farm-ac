@@ -1,0 +1,23 @@
+{
+    "message": "success",
+    "data": {
+        "lat": -27,
+        "temperature": 66.7,
+        "windBearing": 261.26,
+        "windSpeed": 6.97,
+        "apparentTemperature": 53.4,
+        "dewPoint": 47,
+        "pressure": 1020.25,
+        "windGust": 11.93,
+        "cloudCover": 0.51,
+        "visibility": 24.13,
+        "ozone": 267.98,
+        "humidity": 0.2,
+        "uvIndex": 5.75,
+        "time": 1661342400,
+        "summary": "Partly  Cloudy",
+        "icon": "partly-cloudy",
+        "lng": -51.15,
+        "precipIntensity": 0
+    }
+}

@@ -1,0 +1,60 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Farm Accounting</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="/">Dashboard</a>
+            </li>
+            <li>
+                <a href="/lancamento/list">Lançamentos</a>
+            </li>
+            
+            <li>
+                <a href="/linhadotempo/list">Linha do tempo</a>
+            </li>
+
+
+            <!-- <li>
+                <a href="#sub2" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Despesas</a>
+                <ul class="collapse list-unstyled" id="sub2">
+                    <li>
+                        <a href="#">Cadastrar Lançamento</a>
+                    </li>
+                    <li>
+                        <a href="#">Alterar Lançamento</a>
+                    </li>
+                    <li>
+                        <a href="#">Excluir Lançamento</a>
+                    </li>
+                </ul>
+            </li> -->
+
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                    <i class="fas fa-align-left"></i>
+                    <span> </span>
+                </button>
+
+                <ul class="nav navbar-nav flex-row ms-auto userNav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Sair<i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                    </li>
+                </ul>
+
+
+
+
+            </div>
+        </nav>

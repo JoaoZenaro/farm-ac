@@ -51,7 +51,10 @@ def dados():
     soil = soil['data'][0]
     fire = fire['message']
 
-    meses = Prestacao.objects.all().values('data').distinct()
+    try:
+        meses = Prestacao.objects.all().values('data').distinct()
+    except:
+        print('err')
 
     for i in range(len(meses)):
         listaMeses.append(str(meses[i]['data']))
